@@ -1,14 +1,17 @@
 content: |-
-  {{ .Header }}
-  {{ .Footer }}
   ## Examples
-  ```hcl
-  {{ include "examples/first/main.tf" }}
-  ```
-  
-  {{ .Inputs }}
-  {{ .Modules }}
-  {{ .Outputs }}
-  {{ .Providers }}
+
+  {{ $examples := list "first" -}}
+  {{- range $example := $examples -}}
+    ### Example {{ $example }}
+    ```
+    {{ include (printf "examples/%s/main.tf" $example) }}
+    ```
+
+  {{ end -}}
   {{ .Requirements }}
+  {{ .Providers }}
+  {{ .Modules }}
   {{ .Resources }}
+  {{ .Inputs }}
+  {{ .Outputs }}
