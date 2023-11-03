@@ -4,7 +4,7 @@ content: |-
   {{ $examples := list "first" -}}
   {{- range $example := $examples -}}
     ### Example {{ $example }}
-    ```
+    ```hcl
     {{ include (printf "examples/%s/main.tf" $example) }}
     ```
 
