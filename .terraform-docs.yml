@@ -1,6 +1,7 @@
 content: |-
   ## Examples
-  {{- $examples := list "first" -}}
+
+  {{ $examples := list "first" -}}
   {{- range $example := $examples -}}
     ### Example {{ $example }}
     ```
