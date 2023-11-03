@@ -1,12 +1,12 @@
 <!-- BEGIN_TF_DOCS -->
-## Examples
-
-### Example first
+## Examples### Example first
 ```
 resource "random_password" "this" {
   length = 20
 }
-```## Requirements
+```
+
+## Requirements
 
 No requirements.
 ## Providers
