@@ -1,12 +1,11 @@
 content: |-
   ## Examples
-  {{- if (file.IsDir "examples") -}}
-  {{- range $example := (file.ReadDir "examples") }}
+  {{ $examples := list "first" }}
+  {{- range $example := $examples }}
     ### Example {{ $example }}
     ```
     {{ include (printf "examples/%s/main.tf" $example) }}
     ```
-  {{- end -}}
   {{- end -}}
   {{ .Requirements }}
   {{ .Providers }}
