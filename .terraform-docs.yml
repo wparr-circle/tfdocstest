@@ -1,12 +1,13 @@
 content: |-
   ## Examples
-  {{ $examples := list "first" }}
-  {{- range $example := $examples }}
+  {{- $examples := list "first" -}}
+  {{- range $example := $examples -}}
     ### Example {{ $example }}
     ```
     {{ include (printf "examples/%s/main.tf" $example) }}
     ```
-  {{- end -}}
+
+  {{ end -}}
   {{ .Requirements }}
   {{ .Providers }}
   {{ .Modules }}
